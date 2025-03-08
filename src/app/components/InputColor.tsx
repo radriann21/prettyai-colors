@@ -3,7 +3,10 @@ import { useColorStore } from "@/providers/colorStoreProvider"
 
 export const InputColor = () => {
   const color = useColorStore((state) => state.color)
+  const colors = useColorStore((state) => state.colors)
   const setColor = useColorStore((state) => state.setColor)
+
+  console.log(colors)
 
   return (
     <section className="flex items-center justify-center mt-12">

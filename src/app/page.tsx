@@ -1,4 +1,5 @@
 import { InputColor } from "./components/InputColor";
+import { DisplayPalette } from "./components/DisplayPalette";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
         <p className="tracking-wide">Generate colors palettes and visualize them on real time.</p>
       </section>
       <InputColor />
+      <DisplayPalette />
     </section>
   );
 }

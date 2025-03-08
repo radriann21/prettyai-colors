@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Hind } from "next/font/google";
+import { ColorStoreProvider } from "@/providers/colorStoreProvider";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -25,8 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} ${hind.variable}`}>
-        {children}
+      <body className={`${montserrat.variable} ${hind.variable} max-w-full min-h-screen overflow-hidden`}>
+        <ColorStoreProvider>
+          {children}
+        </ColorStoreProvider>
       </body>
     </html>
   );

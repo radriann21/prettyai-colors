@@ -7,7 +7,7 @@ export const DisplayPalette = () => {
   const colors = useColorStore((state) => state.colors)
   
   if (colors.length === 0) return (
-    <h3 className="text-lg font-semibold mt-12">Select a mode for generate the palette.</h3>
+    <h3 className="text-lg font-semibold mt-8">Select a mode for generate the palette.</h3>
   )
 
   return (
@@ -23,7 +23,7 @@ export const DisplayPalette = () => {
           ))
         }
       </div>
-      <button onClick={() => copyToClipboard(colors.join(","), 'Palette copied!')} className="mt-10 px-4 py-2 font-semibold bg-neutral-900 text-white w-fit rounded-md text-sm cursor-pointer inline-flex items-center">
+      <button onClick={() => copyToClipboard(colors.join(","), 'Palette copied!')} className="btn mt-10 px-4 py-2 font-semibold bg-neutral-900 text-white w-fit rounded-md text-sm cursor-pointer inline-flex items-center transition-colors duration-200 hover:bg-neutral-800">
         Copy palette
         <Copy className="w-4 h-4 ml-2" />
       </button>

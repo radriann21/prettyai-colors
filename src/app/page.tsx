@@ -1,4 +1,5 @@
 import { InputColor } from "./components/InputColor";
+import { RandomPaletteButton } from "./components/RandomPaletteButton";
 import { DisplayPalette } from "./components/DisplayPalette";
 import { Toaster } from "react-hot-toast";
 
@@ -16,6 +17,7 @@ export default function Home() {
           {/* Inputs */}
           <div className="flex items-center space-x-4 mt-6">
             <InputColor />
+            <RandomPaletteButton />
           </div>
           <DisplayPalette />
         </div>

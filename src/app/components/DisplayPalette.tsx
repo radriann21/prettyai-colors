@@ -1,5 +1,7 @@
 "use client"
 import { useColorStore } from "@/providers/colorStoreProvider"
+import { Copy } from "lucide-react"
+import { copyToClipboard } from "@/utils/copyToClipboard"
 
 export const DisplayPalette = () => {
   const colors = useColorStore((state) => state.colors)
@@ -7,12 +9,20 @@ export const DisplayPalette = () => {
   if (colors.length === 0) return null
 
   return (
-    <section className="mt-6 flex items-center">
-      {
-        colors.map((color, index) => (
-          <div key={index} className="w-24 h-24" style={{ backgroundColor: color }}></div>
-        ))
-      }
+    <section className="mt-6 flex flex-col">
+      <div className="flex items-center">
+        {
+          colors.map((color, index) => (
+            <div key={index} onClick={() => copyToClipboard(color, 'Color copied!')} className="relative w-24 h-24 border-[2px] border-transparent transition-all duration-200 hover:border-slate-800 cursor-pointer" style={{ backgroundColor: color }}>
+              <span className="absolute -bottom-6 text-sm font-semibold">{color}</span>
+            </div>
+          ))
+        }
+      </div>
+      <button onClick={() => copyToClipboard(colors.join(","), 'Palette copied!')} className="mt-10 px-4 py-2 font-semibold bg-neutral-900 text-white w-fit rounded-md text-sm cursor-pointer inline-flex items-center">
+        Copy palette
+        <Copy className="w-4 h-4 ml-2" />
+      </button>
     </section>
   )
 }

@@ -1,9 +1,11 @@
 import { InputColor } from "./components/InputColor";
 import { DisplayPalette } from "./components/DisplayPalette";
+import { Toaster } from "react-hot-toast";
 
 export default function Home() {
   return (
     <main className="max-w-6xl h-screen mx-auto flex flex-col px-4 xl:px-0 py-8 relative font-hind">
+      <Toaster />
       <section className="mb-8 md:text-center lg:text-left">
         <h1 className="font-montserrat text-3xl font-bold text-slate-900">PrettyaiColors</h1>
         <p className="font-semibold">Generate color palettes and visualize them on real time.</p>
@@ -22,5 +24,5 @@ export default function Home() {
         </div>
       </section>
     </main>
-  );
+  )
 }

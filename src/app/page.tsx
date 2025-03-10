@@ -1,6 +1,6 @@
-import { InputColor } from "./components/InputColor";
-import { RandomPaletteButton } from "./components/RandomPaletteButton";
-import { DisplayPalette } from "./components/DisplayPalette";
+
+import { GenerateSection } from "./components/GenerateSection";
+import { SavedPalettes } from "./components/SavedPalettes";
 import { Toaster } from "react-hot-toast";
 
 export default function Home() {
@@ -12,18 +12,8 @@ export default function Home() {
         <p className="font-semibold">Generate color palettes and visualize them on real time.</p>
       </section>
       <section className="w-full h-[320px] flex flex-col lg:flex-row items-center lg:items-start space-y-4 lg:space-y-0 lg:space-x-4">
-        <div className="w-full md:w-9/12 lg:w-1/2 p-4 rounded-md border-[1px] border-slate-300 h-full">
-          <h2 className="font-montserrat text-lg font-bold">Generate the palette</h2>
-          {/* Inputs */}
-          <div className="flex items-center space-x-4 mt-6">
-            <InputColor />
-            <RandomPaletteButton />
-          </div>
-          <DisplayPalette />
-        </div>
-        <div className="w-full md:w-9/12 lg:w-1/2 p-4 rounded-md border-[1px] border-slate-300 h-full">
-          <h2 className="font-montserrat text-lg font-bold">Saved Palettes</h2>
-        </div>
+        <GenerateSection />
+        <SavedPalettes />
       </section>
     </main>
   )

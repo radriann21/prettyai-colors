@@ -44,7 +44,7 @@ export const AIPaletteButton = () => {
       className="bg-neutral-900 text-white font-semibold py-2 px-4 rounded-md text-sm inline-flex items-center cursor-pointer transition-colors duration-200 hover:bg-neutral-800" 
       onClick={() => {
         if (document) {
-          (document.getElementById('my_modal_2') as HTMLFormElement).showModal();
+          (document.getElementById('my_modal') as HTMLFormElement).showModal();
         }
       }}
     >

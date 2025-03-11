@@ -62,9 +62,9 @@ export const AIPaletteButton = () => {
               <textarea className="textarea h-24 resize-none" value={prompt} onChange={(e) => setPrompt(e.target.value)} placeholder="Describe the palette..."></textarea>
               <div className="modal-action mt-1">
                 <div className="flex w-full items-start space-x-4">
-                  <button onClick={handleGeneratePaletteIA} className="btn rounded-md bg-neutral-900 w-fit text-white font-semibold transition-colors duration-200 hover:bg-neutral-800" type="submit">Generate</button>
+                  <span onClick={handleGeneratePaletteIA} className="btn rounded-md bg-neutral-900 w-fit text-white font-semibold transition-colors duration-200 hover:bg-neutral-800">Generate</span>
                   <form method="dialog">
-                    <button className="btn rounded-md bg-transparent border-1 border-red-500 w-fit text-red-500 font-semibold transition-colors duration-200 hover:bg-red-50">Close</button>
+                    <span className="btn rounded-md bg-transparent border-1 border-red-500 w-fit text-red-500 font-semibold transition-colors duration-200 hover:bg-red-50">Close</span>
                   </form>
                 </div>
               </div>

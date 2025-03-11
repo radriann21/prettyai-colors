@@ -14,6 +14,8 @@ export type ColorActions = {
   setRandomPalette: () => void
   savePalette: (colors: string[]) => void
   deletePalette: (index: number) => void
+  setAIPalette: (colors: string[]) => void
+  setAIColor: (color: string) => void
 }
 
 export type ColorStore = ColorState & ColorActions
@@ -59,6 +61,16 @@ export const createColorStore = (initState: ColorState = defaultInitState) => {
         deletePalette: (index) => set((state) => {
           return {
             palettes: state.palettes.filter((_, i) => i !== index)
+          }
+        }),
+        setAIPalette: (colors) => set(() => {
+          return {
+            colors
+          }
+        }),
+        setAIColor: (color) => set(() => {
+          return {
+            color
           }
         })
       }),

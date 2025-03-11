@@ -1,6 +1,7 @@
 import { InputColor } from "./InputColor";
 import { RandomPaletteButton } from "./RandomPaletteButton";
 import { DisplayPalette } from "./DisplayPalette";
+import { AIPaletteButton } from "./AIPaletteButton";
 
 export const GenerateSection = () => {
   return (
@@ -9,6 +10,7 @@ export const GenerateSection = () => {
       <div className="flex items-center space-x-4 mt-2">
         <InputColor />
         <RandomPaletteButton />
+        <AIPaletteButton />
       </div>
       <DisplayPalette />
   </div>

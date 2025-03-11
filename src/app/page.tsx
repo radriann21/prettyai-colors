@@ -1,4 +1,3 @@
-
 import { GenerateSection } from "./components/GenerateSection";
 import { SavedPalettes } from "./components/SavedPalettes";
 import { Toaster } from "react-hot-toast";

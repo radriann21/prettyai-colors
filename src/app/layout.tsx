@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${montserrat.variable} ${hind.variable} max-w-full min-h-screen overflow-hidden`}>
+      <body className={`${montserrat.variable} ${hind.variable} max-w-full min-h-screen`}>
         <ColorStoreProvider>
           {children}
         </ColorStoreProvider>

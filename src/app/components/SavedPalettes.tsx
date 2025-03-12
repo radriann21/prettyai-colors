@@ -10,7 +10,7 @@ export const SavedPalettes = () => {
   const deletePalette = useColorStore((state) => state.deletePalette);
 
   return (
-    <div className="w-full md:w-9/12 lg:w-1/2 p-4 rounded-md border-[1px] border-slate-300 h-full overflow-hidden">
+    <div className="w-full md:w-9/12 lg:w-1/2 p-4 rounded-md border-[1px] border-slate-300 h-full">
       <h2 className="font-montserrat text-lg font-bold">Saved Palettes</h2>
       <div className="flex flex-col h-full overflow-scroll py-2">
         {palettes.length === 0 ? (

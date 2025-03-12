@@ -22,7 +22,7 @@ export const ShowPaletteSection = () => {
       <div className="flex flex-col space-y-4">
         <div
           role="alert"
-          className="alert"
+          className="alert transition-colors duration-200"
           style={{
             backgroundColor: "var(--color-accent)",
             color: calculateContrast(accent || "#000000"),
@@ -54,7 +54,7 @@ export const ShowPaletteSection = () => {
           ].map(({ color, label }) => (
             <div
               key={label}
-              className="badge"
+              className="badge transition-colors duration-200"
               style={{
                 backgroundColor: color,
                 color: calculateContrast(color || "#000000"),
@@ -68,7 +68,7 @@ export const ShowPaletteSection = () => {
 
       <div className="space-y-4">
         <fieldset
-          className="fieldset p-4 bg-base-100 border border-base-300 rounded-box h-fit"
+          className="fieldset p-4 bg-base-100 border border-base-300 rounded-box h-fit transition-colors duration-200"
           style={{ backgroundColor: "var(--color-primary)" }}
         >
           <legend className="fieldset-legend">Login options</legend>
@@ -87,7 +87,7 @@ export const ShowPaletteSection = () => {
           <legend className="fieldset-legend">Pick a file</legend>
           <input
             type="file"
-            className="file-input"
+            className="file-input transition-colors duration-200"
             style={{
               backgroundColor: "var(--color-primary)",
               color: calculateContrast(details || "#000000"),
@@ -110,7 +110,7 @@ export const ShowPaletteSection = () => {
             </thead>
             <tbody>
               <tr
-                className="bg-base-200"
+                className="bg-base-200 transition-colors duration-200"
                 style={{
                   backgroundColor: "var(--color-primary)",
                   color: calculateContrast(details || "#000000"),
@@ -140,7 +140,7 @@ export const ShowPaletteSection = () => {
 
       <div className="space-y-4">
         <div
-          className="radial-progress"
+          className="radial-progress transition-colors duration-200"
           style={{
             "--value": 70,
             color: "var(--color-primary)",
@@ -153,7 +153,7 @@ export const ShowPaletteSection = () => {
 
         <select
           defaultValue="Color scheme"
-          className="select"
+          className="select transition-colors duration-200"
           style={{
             backgroundColor: "var(--color-secondary)",
             color: calculateContrast(secondary || "#000000"),
@@ -166,13 +166,13 @@ export const ShowPaletteSection = () => {
         </select>
 
         <div
-          className="stats shadow h-fit"
+          className="stats shadow h-fit transition-colors duration-200"
           style={{
             backgroundColor: "var(--color-neutral)",
             color: calculateContrast(details || "#000000"),
           }}
         >
-          <div className="stat">
+          <div className="stat transition-colors duration-200">
             <div className="stat-title" style={{ color: calculateContrast(details || "#000000") }}>Total Page Views</div>
             <div className="stat-value" style={{ color: calculateContrast(details || "#000000") }}>89,400</div>
             <div className="stat-desc" style={{ color: calculateContrast(details || "#b8b8b8") }}>21% more than last month</div>
@@ -190,7 +190,7 @@ export const ShowPaletteSection = () => {
           <legend className="fieldset-legend">Username</legend>
           <input
             type="text"
-            className="input"
+            className="input transition-colors duration-200"
             placeholder="radriann21"
             style={{ borderColor: "var(--color-secondary)" }}
           />
@@ -200,14 +200,14 @@ export const ShowPaletteSection = () => {
           <legend className="fieldset-legend">Password</legend>
           <input
             type="password"
-            className="input"
+            className="input transition-colors duration-200"
             placeholder="your password..."
             style={{ borderColor: "var(--color-secondary)" }}
           />
         </fieldset>
 
         <button
-          className="btn"
+          className="btn transition-colors duration-200"
           style={{
             backgroundColor: "var(--color-primary)",
             color: calculateContrast(details || "#000000"),
@@ -233,10 +233,10 @@ export const ShowPaletteSection = () => {
         </button>
       </div>
 
-      <div className="mockup-code h-fit" style={{ backgroundColor: "var(--color-primary)" }}>
-        <pre data-prefix="1"><code>npm i daisyui</code></pre>
-        <pre data-prefix="2"><code>installing...</code></pre>
-        <pre data-prefix="3" className="bg-warning text-warning-content" style={{ backgroundColor: "var(--color-neutral)", color: calculateContrast(details || "#000000") }}><code>Error!</code></pre>
+      <div className="mockup-code h-fit transition-colors duration-200" style={{ backgroundColor: "var(--color-primary)" }}>
+        <pre data-prefix="1" className="transition-colors duration-200" style={{ color: calculateContrast(details || "#000000") }}><code>npm i daisyui</code></pre>
+        <pre data-prefix="2" className="transition-colors duration-200" style={{ color: calculateContrast(details || "#000000") }}><code>installing...</code></pre>
+        <pre data-prefix="3" className="bg-warning text-warning-content transition-colors duration-200" style={{ backgroundColor: "var(--color-neutral)", color: calculateContrast(details || "#000000") }}><code>Error!</code></pre>
       </div>
     </section>
   );

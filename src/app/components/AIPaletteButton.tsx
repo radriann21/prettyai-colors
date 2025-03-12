@@ -41,7 +41,7 @@ export const AIPaletteButton = () => {
 
   return (
     <button 
-      className="bg-neutral-900 text-white font-semibold py-2 px-4 rounded-md text-sm inline-flex items-center cursor-pointer transition-colors duration-200 hover:bg-neutral-800" 
+      className="btn w-fit bg-neutral-900 text-white font-semibold py-2 px-4 rounded-md text-sm cursor-pointer transition-colors duration-200 hover:bg-neutral-800" 
       onClick={() => {
         if (document) {
           (document.getElementById('my_modal') as HTMLFormElement).showModal();
@@ -50,7 +50,7 @@ export const AIPaletteButton = () => {
     >
       AI Palette
       <BrainCog className="w-4 h-4 ml-2" />
-      <dialog id="my-modal" className="modal">
+      <dialog id="my_modal" className="modal">
         <div className="modal-box text-left text-black max-w-xl">
           <h3 className="font-bold text-lg font-montserrat">Generate a palette</h3>
           <p className="text-sm">
@@ -59,10 +59,10 @@ export const AIPaletteButton = () => {
           <div className="mt-4">
             <fieldset className="fieldset">
               <legend className="fieldset-legend">Prompt</legend>
-              <textarea className="textarea h-24 resize-none" value={prompt} onChange={(e) => setPrompt(e.target.value)} placeholder="Describe the palette..."></textarea>
+              <textarea className="textarea h-24 resize-none w-full text-sm focus:outline-none" value={prompt} onChange={(e) => setPrompt(e.target.value)} placeholder="Describe the palette..."></textarea>
               <div className="modal-action mt-1">
                 <div className="flex w-full items-start space-x-4">
-                  <button onClick={handleGeneratePaletteIA} className="btn rounded-md bg-neutral-900 w-fit text-white font-semibold transition-colors duration-200 hover:bg-neutral-800" type="submit">Generate</button>
+                  <span onClick={handleGeneratePaletteIA} className="btn rounded-md bg-neutral-900 w-fit text-white font-semibold transition-colors duration-200 hover:bg-neutral-800">Generate</span>
                   <form method="dialog">
                     <button className="btn rounded-md bg-transparent border-1 border-red-500 w-fit text-red-500 font-semibold transition-colors duration-200 hover:bg-red-50">Close</button>
                   </form>

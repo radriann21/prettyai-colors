@@ -32,15 +32,15 @@ export const DisplayPalette = () => {
 
   return (
     <section className="mt-6 flex flex-col">
-      <div className="flex items-center">
+      <div className="flex items-center overflow-x-scroll sm:overflow-x-visible">
         {
           colors.map((color, index) => (
-            <ColorItem key={index} color={color} width="w-24" height="h-24" />
+            <ColorItem key={index} color={color} width="w-16 sm:w-24" height="h-16 sm:h-24" />
           ))
         }
       </div>
 
-      <div className="flex items-center space-x-4 mt-10">
+      <div className="flex items-center space-x-4 mt-6 sm:mt-10">
         <button onClick={() => copyToClipboard(colors.join(","), 'Palette copied!')} className="btn px-4 py-2 font-semibold bg-neutral-900 text-white w-fit rounded-md text-sm cursor-pointer inline-flex items-center transition-colors duration-200 hover:bg-neutral-800">
           Copy palette
           <Copy className="w-4 h-4 ml-2" />

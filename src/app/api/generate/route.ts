@@ -3,7 +3,7 @@ import { generateText } from "ai";
 import { google } from "@ai-sdk/google";
 
 export async function POST(request: Request) {
-  const model = google("gemini-1.5-flash");
+  const model = google("gemini-2.0-flash-lite-preview-02-05");
 
   try {
     const { prompt } = await request.json();

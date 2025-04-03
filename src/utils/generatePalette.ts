@@ -1,7 +1,27 @@
 import chroma from "chroma-js";
 
-export const generatePalette = (color: string) => {
-  if (color === '' || !color) return []
-  const colors = chroma.scale([color, chroma(color).darken(2)]).colors(6)
-  return colors
+export const generatePalette = (color: string): string[] => {
+  if (!color || color.trim() === "") return [];
+
+  const baseColor = chroma(color);
+
+  const primaryColor = baseColor.set("hsl.l", "+0.2").set("hsl.s", "+0.1");
+
+  const secondaryColor = primaryColor.darken(0.8); 
+  const accentColor = primaryColor.brighten(1.5).saturate(1); 
+
+  const backgroundColor = chroma("#FFFFFF"); 
+  const primaryTextColor = chroma.contrast(primaryColor, backgroundColor) > 4.5 ? primaryColor : primaryColor.darken(2);
+  const secondaryTextColor = chroma.mix(primaryTextColor, backgroundColor, 0.75); 
+
+  const colors = [
+    backgroundColor.hex(),       
+    primaryTextColor.hex(),      
+    secondaryTextColor.hex(),    
+    primaryColor.hex(),          
+    secondaryColor.hex(),        
+    accentColor.hex(),           
+  ];
+
+  return colors;
 }

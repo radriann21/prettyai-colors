@@ -9,7 +9,7 @@ export const MoreGenerationOptions = () => {
     <div className="flex items-start">
       <Popover>
         <PopoverTrigger className="block mt-2 md:hidden" asChild>
-          <Button>More options <Plus /></Button>
+          <Button className="w-fit flex items-center">More options <Plus /></Button>
         </PopoverTrigger>
         <PopoverContent className="flex flex-col items-start space-y-2">
         <InputColor />

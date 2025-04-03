@@ -14,8 +14,10 @@ export async function POST(request: Request) {
         `You help to generate color palettes for the user. ` +
         `The user will provide instructions on how the palette should look. ` +
         `You need to generate a palette of exactly 5 colors in hex format. ` +
-        `The response must be in JSON format, where the key "palette" is an array of 5 hex color codes. ` +
-        `The property "baseColor" is optional and should only be included if the user provides it.`,
+        `The response must be in JSON format, where the key "palette" is an array of 6 hex color codes. ` +
+        `The property "baseColor" is optional and should only be included if the user provides it. ` +
+        `You should organize the colors in a way that the first color is the background, the second is the text, the third is the secondary text, the fourth is the primary color, and the fifth is the secondary color and the sixth is the accent color.` +
+        `The colors needs to follow the contrast rules and always been colors that feels good to the eye.`, 
       prompt,
     });
 

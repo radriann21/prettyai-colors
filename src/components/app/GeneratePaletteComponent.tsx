@@ -11,6 +11,7 @@ import { useColorStore } from "@/providers/colorStoreProvider"
 export const GeneratePaletteComponent = () => {
   const { setAIColor, setAIPalette } = useColorStore((state) => state)
   const [prompt, setPrompt] = useState<string>('')
+  const [loading, setLoading] = useState(false)
 
   const handleGeneratePaletteIA = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -18,6 +19,7 @@ export const GeneratePaletteComponent = () => {
     if (!prompt || !prompt.trim()) return
 
     try {
+      setLoading(true)
       const res = await fetch('/api/generate', {
         method: 'POST',
         headers: {
@@ -44,14 +46,18 @@ export const GeneratePaletteComponent = () => {
       console.log(error)
     } finally {
       setPrompt('')
+      setLoading(false)
     }
   }
 
   return (
-    <section className="mt-10 p-6 rounded-md shadow-lg w-[80%] mx-auto xl:w-full">
+    <section className="mt-10 p-6 rounded-md shadow-lg w-[90%] mx-auto xl:w-full">
       <form onSubmit={handleGeneratePaletteIA} className="flex w-full space-x-2">
-        <Input onChange={(e) => setPrompt(e.target.value)} className="placeholder:text-sm" placeholder="Describe your palette..." />
-        <Button type="submit" className="cursor-pointer flex items-center">AI Palette <BrainCog /> </Button>
+        <Input onChange={(e) => setPrompt(e.target.value)} className="placeholder:text-sm" value={prompt} placeholder="Describe your palette..." />
+        <Button type="submit" className="cursor-pointer flex items-center">
+          {loading ? 'Generating...' : 'AI Palette'}
+          {loading && <BrainCog className="ml-2 animate-pulse" />}
+        </Button>
       </form>
       <div className="mt-4 items-center space-x-2 hidden md:flex">
         <InputColor />

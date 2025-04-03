@@ -14,7 +14,7 @@ export const InputColor = () => {
       <input
         type="color"
         id="color"
-        onChange={(evt) => debouncedSetColor(evt.target.value)} // Usamos la versión debounced
+        onChange={(evt) => debouncedSetColor(evt.target.value)}
       />
       <span className="font-semibold text-sm">Choose a color</span>
     </label>

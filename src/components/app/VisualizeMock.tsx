@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, Loader, Menu } from "lucide-react";
+import { calculateContrast } from "@/utils/calculateContrast";
 
 export const VisualizeMock = ({ colors }: { colors: string[] }) => {
   return (
@@ -37,35 +38,33 @@ export const VisualizeMock = ({ colors }: { colors: string[] }) => {
         value="cards"
         className="w-full flex flex-col lg:flex-row gap-2 items-center justify-between"
       >
-        <Card className="w-full h-full" style={{ backgroundColor: colors[2] }}>
+        <Card className="w-full h-full shadow-md" style={{ backgroundColor: colors[0], color: colors[1] }}>
           <CardHeader>
-            <CardTitle style={{ color: colors[0] }} className="font-bold">
+            <CardTitle style={{ color: colors[1] }} className="font-bold">
               How this works?
             </CardTitle>
-            <CardDescription style={{ color: colors[0] }}>
+            <CardDescription style={{ color: colors[2] }}>
               Using differents algorithms, we can generate colors following
               certain rules.
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="leading-6 text-sm" style={{ color: colors[0] }}>
+            <p className="leading-6 text-sm">
               Colors are assigned to provide adequate contrast while remaining
-              aesthetically pleasing. Artificial intelligence generation, will
-              take into account an optional base color to generate a palette
-              that reflects the user&apos;s desired emotions.
+              aesthetically pleasing. 
             </p>
           </CardContent>
         </Card>
-        <Card className="w-full h-full" style={{ backgroundColor: colors[2] }}>
+        <Card className="w-full h-full shadow-md" style={{ backgroundColor: colors[0], color: colors[1] }}>
           <CardHeader>
-            <CardTitle style={{ color: colors[0] }} className="font-bold">
+            <CardTitle style={{ color: colors[1] }} className="font-bold">
               How to use?
             </CardTitle>
-            <CardDescription style={{ color: colors[0] }}>
+            <CardDescription style={{ color: colors[2] }}>
               There are three ways to generate colors.
             </CardDescription>
           </CardHeader>
-          <CardContent style={{ color: colors[0] }}>
+          <CardContent>
             <ul className="flex flex-col space-y-1 text-sm">
               <li>
                 <span className="font-bold">User input:</span> User enters a
@@ -89,44 +88,50 @@ export const VisualizeMock = ({ colors }: { colors: string[] }) => {
       >
         <Button
           className="cursor-pointer"
-          style={{ backgroundColor: colors[3], color: colors[1] }}
+          style={{ backgroundColor: colors[3], color: calculateContrast(colors[3]) }}
         >
           Normal
         </Button>
         <Button
           className="cursor-pointer"
           variant="outline"
-          style={{ borderColor: colors[3] }}
+          style={{ borderColor: colors[1] }}
         >
           Outline
         </Button>
         <Button
           className="cursor-pointer"
           disabled
-          style={{ backgroundColor: colors[3], color: colors[1] }}
+          style={{ backgroundColor: colors[3], color: calculateContrast(colors[3]) }}
         >
           Disabled
         </Button>
         <Button
-          className="cursor-pointer flex items-center"
-          style={{ backgroundColor: colors[4], color: colors[1] }}
+          className="cursor-pointer flex items-center text-neutral-900"
+          style={{ backgroundColor: colors[4], color: calculateContrast(colors[4]) }}
         >
           Loading...
           <Loader
             className="h-4 w-4 animate-spin"
-            style={{ color: colors[1] }}
           />
         </Button>
-        <Button className="cursor-pointer flex items-center">
+        <Button className="cursor-pointer flex items-center" style={{ backgroundColor: colors[5], color: calculateContrast(colors[5]) }}>
           Sign In
           <Mail className="h-4 w-4" />
+        </Button>
+        <Button
+          variant="ghost"
+          className="cursor-pointer"
+          style={{ color: calculateContrast(colors[1]) }}
+        >
+          Ghost
         </Button>
       </TabsContent>
       <TabsContent value="web" className="w-full">
         <div className="flex flex-col min-h-[400px]">
           <nav
             className="flex items-center justify-between px-4 py-3 sm:px-6 sm:py-4"
-            style={{ backgroundColor: colors[3], color: colors[1] }}
+            style={{ backgroundColor: colors[3], color: calculateContrast(colors[3]) }}
           >
             <h1 className="font-bold text-lg">PrettyAI Colors</h1>
 
@@ -172,7 +177,7 @@ export const VisualizeMock = ({ colors }: { colors: string[] }) => {
           >
             <h1
               className="text-2xl font-bold mb-4 sm:text-4xl"
-              style={{ color: colors[3] }}
+              style={{ color: colors[1] }}
             >
               Create Stunning Designs
             </h1>
@@ -183,8 +188,8 @@ export const VisualizeMock = ({ colors }: { colors: string[] }) => {
             <Button
               className="px-4 py-2 text-sm font-semibold sm:px-6 sm:py-3 cursor-pointer"
               style={{
-                backgroundColor: colors[5],
-                color: colors[1],
+                backgroundColor: colors[4],
+                color: calculateContrast(colors[5]),
               }}
             >
               Get Started

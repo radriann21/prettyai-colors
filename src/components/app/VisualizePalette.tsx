@@ -32,8 +32,8 @@ export const VisualizePalette = () => {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.4, ease: 'linear' }}
-        className="mt-10 w-[80%] mx-auto xl:w-full text-center">
-        <div className="flex flex-col sm:flex-row items-center justify-between w-full sm:w-[60%] mx-auto">
+        className="mt-10 w-[80%] sm:max-w-[920px] mx-auto xl:w-full text-center">
+        <div className="flex flex-col sm:flex-row items-center justify-between w-full sm:w-full mx-auto">
           <h2 className="font-montserrat text-2xl font-bold">Your color palette</h2>
           <div className="flex items-center space-x-4">
             <TooltipProvider>
@@ -58,7 +58,7 @@ export const VisualizePalette = () => {
             </TooltipProvider>
           </div>
         </div>
-        <div className="mt-8 flex flex-wrap items-center justify-center w-fit mx-auto gap-8">
+        <div className="mt-8 flex flex-wrap items-center justify-center w-full mx-auto gap-8">
           {
             colors.map((color) => (
               <ColorItem key={crypto.randomUUID()} color={color} className="relative w-28 h-28 rounded-md transition-colors duration-200 shadow-lg" />

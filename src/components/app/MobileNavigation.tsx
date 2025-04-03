@@ -17,6 +17,7 @@ export const MobileNavigation = () => {
       </SheetHeader>
         <nav className="flex flex-col space-y-4 p-4 text-lg">
           <Link className="text-slate-700 transition-colors duration-200 hover:text-slate-900" href="/">Home</Link>
+          <Link className="text-slate-700 transition-colors duration-200 hover:text-slate-900" href="/palettes">Saved Palettes</Link>
         </nav>
       </SheetContent>
     </Sheet>

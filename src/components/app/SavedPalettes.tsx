@@ -15,7 +15,7 @@ export const SavedPalettes = () => {
       <Toaster />
       <section className="w-full px-10">
         <div className="w-full flex items-center justify-between">
-          <h2 className="font-montserrat text-3xl font-bold">Saved palettes</h2>
+          <h2 className="font-montserrat text-3xl font-bold text-[#da7c3a]">Saved palettes</h2>
           <Button className="bg-red-500 transition-colors duration-200 cursor-pointer hover:bg-red-600" onClick={deleteAllPalettes}>Delete All</Button>
         </div>
         <section className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 mt-10 place-items-center">

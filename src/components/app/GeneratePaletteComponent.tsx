@@ -51,10 +51,10 @@ export const GeneratePaletteComponent = () => {
   }
 
   return (
-    <section className="mt-10 p-6 rounded-md shadow-lg w-[90%] mx-auto xl:w-full">
+    <section className="mt-10 p-6 rounded-md shadow-lg w-[90%] mx-auto xl:w-full bg-[#ffffff]">
       <form onSubmit={handleGeneratePaletteIA} className="flex w-full space-x-2">
         <Input onChange={(e) => setPrompt(e.target.value)} className="placeholder:text-sm" value={prompt} placeholder="Describe your palette..." />
-        <Button type="submit" className="cursor-pointer flex items-center">
+        <Button type="submit" className="cursor-pointer flex items-center bg-[#29ABE2]">
           {loading ? 'Generating...' : 'AI Palette'}
           {loading && <BrainCog className="ml-2 animate-pulse" />}
         </Button>

@@ -8,7 +8,7 @@ export const RandomPaletteButton = () => {
   const setRandomPalette = useColorStore((state) => state.setRandomPalette)
 
   return (
-    <Button onClick={setRandomPalette} className="px-4 py-2 font-semibold bg-neutral-900 text-white w-fit rounded-md text-sm cursor-pointer transition-colors duration-200 hover:bg-neutral-800">
+    <Button onClick={setRandomPalette} className="px-4 py-2 font-semibold bg-[#29ABE2] text-white w-fit rounded-md text-sm cursor-pointer transition-colors duration-200 hover:bg-neutral-800">
       Random Palette
       <Repeat />
     </Button>

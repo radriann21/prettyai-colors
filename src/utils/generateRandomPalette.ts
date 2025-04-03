@@ -9,7 +9,7 @@ const generateBackgroundColor = () => {
   return chroma.mix("#FFFFFF", "#F8F9FA", Math.random() * 0.3);
 };
 
-const adjustColorContrast = (textColor, backgroundColor, targetContrast) => {
+const adjustColorContrast = (textColor: chroma.Color, backgroundColor: chroma.Color, targetContrast: number) => {
   let contrast = chroma.contrast(textColor, backgroundColor);
   let adjustedColor = textColor;
   let iteration = 0;
@@ -33,7 +33,7 @@ const adjustColorContrast = (textColor, backgroundColor, targetContrast) => {
   return adjustedColor;
 };
 
-const adjustSecondaryTextColor = (primaryTextColor, backgroundColor) => {
+const adjustSecondaryTextColor = (primaryTextColor: chroma.Color, backgroundColor: chroma.Color) => {
   let adjustedColor = chroma.mix(primaryTextColor, backgroundColor, 0.5); 
   if (chroma.contrast(adjustedColor, backgroundColor) < 3) {
     adjustedColor = adjustedColor.darken(0.5).saturate(0.3); 

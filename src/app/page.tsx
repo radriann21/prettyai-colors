@@ -1,6 +1,5 @@
 import { Hero } from "@/components/app/Hero"
-import { VisualizePalette } from "@/components/app/VisualizePalette"
-import { VisualizeOnWeb } from "@/components/app/VisualizeOnWeb"
+import { GeneratorContainer } from "@/components/app/GeneratorContainer"
 import { Toaster } from "@/components/ui/sonner"
 
 export default function Home() {
@@ -8,8 +7,7 @@ export default function Home() {
     <>
       <Toaster />
       <Hero />
-      <VisualizePalette />
-      <VisualizeOnWeb />
+      <GeneratorContainer />
     </> 
   )
 }

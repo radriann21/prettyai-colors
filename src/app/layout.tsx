@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${montserrat.variable} ${hind.variable} max-w-full min-h-screen bg-[#faf8f5]`}>
+      <body className={`${montserrat.variable} ${hind.variable} max-w-full min-h-screen bg-[#fcfcfc]`}>
         <main className="w-full min-h-screen flex flex-col relative font-hind">
           <ColorStoreProvider>
             <Navigation />  

@@ -1,6 +1,5 @@
 "use client"
 import { useColorStore } from "@/providers/colorStoreProvider"
-import { EmptyState } from "@/components/app/EmptyState"
 import { SavedPalettes } from "@/components/app/SavedPalettes"
 
 export default function PalettesPage() {
@@ -12,7 +11,7 @@ export default function PalettesPage() {
         <div className="flex-1 overflow-y-auto">
           {
             palettes.length === 0
-            ? (<EmptyState />)
+            ? ( <h1>No palettes found</h1>)
             : (<SavedPalettes />)
           }
         </div>

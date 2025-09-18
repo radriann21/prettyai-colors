@@ -1,6 +1,8 @@
 "use client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AIGeneration } from "./AIGeneration";
+import { ManualGeneration } from "./ManualGeneration";
+import { RandomGeneration } from "./RandomGeneration";
 import { AnimatePresence } from "motion/react";
 
 export const ToolsTabs = () => {
@@ -12,11 +14,15 @@ export const ToolsTabs = () => {
         <TabsTrigger value="random">Random</TabsTrigger>
       </TabsList>
       <AnimatePresence>
-        <TabsContent value="manual"></TabsContent>
+        <TabsContent value="manual">
+          <ManualGeneration />
+        </TabsContent>
         <TabsContent value="ai">
           <AIGeneration />
         </TabsContent>
-        <TabsContent value="random"></TabsContent>
+        <TabsContent value="random">
+          <RandomGeneration />
+        </TabsContent>
       </AnimatePresence>
     </Tabs>
   );

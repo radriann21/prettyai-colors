@@ -17,6 +17,7 @@ export type ColorActions = {
   setAIPalette: (colors: string[]) => void
   setAIColor: (color: string) => void
   deleteAllPalettes: () => void
+  updateColorAtIndex: (index: number, color: string) => void
 }
 
 export type ColorStore = ColorState & ColorActions
@@ -24,14 +25,14 @@ export type ColorStore = ColorState & ColorActions
 export const initColorStore = (): ColorState => {
   return {
     color: '#000000',
-    colors: [],
+    colors: ["#3B82F6", "#06B6D4", "#10B981", "#84CC16", "#F59E0B", "#F97316"],
     palettes: []
   }
 }
 
 export const defaultInitState: ColorState = {
   color: '#000000',
-  colors: [],
+  colors: ["#3B82F6", "#06B6D4", "#10B981", "#84CC16", "#F59E0B", "#F97316"],
   palettes: []
 }
 
@@ -77,6 +78,11 @@ export const createColorStore = (initState: ColorState = defaultInitState) => {
         deleteAllPalettes: () => set(() => {
           return {
             palettes: []
+          }
+        }),
+        updateColorAtIndex: (index, color) => set((state) => {
+          return {
+            colors: state.colors.map((c, i) => (i === index ? color : c))
           }
         })
       }),

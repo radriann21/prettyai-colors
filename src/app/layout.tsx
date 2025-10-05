@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Montserrat, Hind } from "next/font/google";
 import { ColorStoreProvider } from "@/providers/colorStoreProvider";
 import { Navigation } from "@/components/app/Navigation";
-import { Footer } from "@/components/app/Footer";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -31,11 +30,10 @@ export default function RootLayout({
       <body className={`${montserrat.variable} ${hind.variable} max-w-full min-h-screen bg-[#fcfcfc]`}>
         <main className="w-full min-h-screen flex flex-col relative font-hind">
           <ColorStoreProvider>
-            <Navigation />  
+            <Navigation />
             <div className="flex-1 flex flex-col">
               {children}
             </div>
-            <Footer />
           </ColorStoreProvider>
         </main>
       </body>

@@ -43,16 +43,16 @@ export const AIGeneration = () => {
 
   return (
     <AnimatePresence>
-      <motion.section 
+      <motion.section
         className="w-full flex flex-col gap-y-2 mt-5"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ 
-          duration: 0.2, 
+        transition={{
+          duration: 0.2,
           ease: 'linear',
           stiffness: 100,
-          damping: 15 
+          damping: 15
         }}
       >
         <h3 className="font-montserrat font-semibold">
@@ -73,7 +73,7 @@ export const AIGeneration = () => {
           />
           <Button
             type="submit"
-            className="cursor-pointer flex items-center bg-[#29ABE2] hover:bg-[#2096c5]"
+            className="cursor-pointer flex items-center bg-[#D76C38] hover:bg-[#E85A2B]"
           >
             Generate
           </Button>

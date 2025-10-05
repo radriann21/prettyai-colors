@@ -8,10 +8,10 @@ import { AnimatePresence } from "motion/react";
 export const ToolsTabs = () => {
   return (
     <Tabs defaultValue="manual">
-      <TabsList>
-        <TabsTrigger value="manual">Manual</TabsTrigger>
-        <TabsTrigger value="ai">AI</TabsTrigger>
-        <TabsTrigger value="random">Random</TabsTrigger>
+      <TabsList className="w-full">
+        <TabsTrigger value="manual" className="p-2 cursor-pointer">Manual</TabsTrigger>
+        <TabsTrigger value="ai" className="p-2 cursor-pointer">AI</TabsTrigger>
+        <TabsTrigger value="random" className="p-2 cursor-pointer">Random</TabsTrigger>
       </TabsList>
       <AnimatePresence>
         <TabsContent value="manual">

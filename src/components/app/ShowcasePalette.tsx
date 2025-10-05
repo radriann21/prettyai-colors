@@ -22,7 +22,7 @@ export const ShowcasePalette = () => {
   }, [colors, savePalette]);
 
   return (
-    <section className="w-full col-span-1 p-4 rounded-md shadow-md bg-[#FFF8E9] relative">
+    <section className="w-full col-span-1 p-4 rounded-md shadow-md bg-[#FFF8E9] relative mt-5">
       {colors.length === 0 ? (
         <div className="absolute top-10 left-1/2 transform -translate-x-1/2">
           <p className="text-slate-600">No colors added yet</p>

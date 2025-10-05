@@ -26,7 +26,7 @@ export const ManualGeneration = () => {
       >
         <h1 className="font-semibold">Manual Generation</h1>
         <p className="text-sm">Use the inputs to select the colors for your personalized palette.</p>
-        <section className="w-full grid grid-cols-6 gap-4 mt-2">
+        <section className="w-full grid grid-cols-3 lg:grid-cols-6 gap-4 mt-2">
           {
             colors.map((color, index) => (
               <ColorPicker

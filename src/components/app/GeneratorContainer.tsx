@@ -3,9 +3,9 @@ import { ShowcasePalette } from "./ShowcasePalette"
 
 export const GeneratorContainer = () => {
   return (
-    <main className="w-full grid grid-cols-3 gap-x-4 px-10">
+    <section className="w-full grid grid-cols-1 xl:grid-cols-3 gap-x-4 px-4 lg:px-10">
       <ToolsContainer />
       <ShowcasePalette />
-    </main>
+    </section>
   )
 }

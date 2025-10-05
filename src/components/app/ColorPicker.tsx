@@ -29,7 +29,7 @@ export const ColorPicker = ({ color, onChange }: ColorPickerProps) => {
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
         <Button
-          className="h-20 p-2 border-2 bg-transparent hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg"
+          className="h-20 p-2 border-2 bg-transparent hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg text-sm lg:text-base"
           variant="outline"
           style={{ backgroundColor: color }}
         >
@@ -40,11 +40,11 @@ export const ColorPicker = ({ color, onChange }: ColorPickerProps) => {
         <div className="space-y-4">
           <div className="space-y-3">
             <label className="text-sm font-semibold">Color Selector</label>
-            <Input 
-              type="color" 
-              value={localColor} 
-              className="h-14 w-full cursor-pointer" 
-              onChange={(e) => setLocalColor(e.target.value)} 
+            <Input
+              type="color"
+              value={localColor}
+              className="h-14 w-full cursor-pointer"
+              onChange={(e) => setLocalColor(e.target.value)}
             />
           </div>
           <div className="text-sm font-semibold">

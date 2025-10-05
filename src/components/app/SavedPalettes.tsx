@@ -13,10 +13,16 @@ export const SavedPalettes = () => {
   return (
     <>
       <Toaster />
-      <section className="w-full px-10">
+      <section className="w-full px-5 md:px-10">
         <div className="w-full flex items-center justify-between">
           <h2 className="font-montserrat text-3xl font-bold text-[#da7c3a]">Saved palettes</h2>
-          <Button className="bg-red-500 transition-colors duration-200 cursor-pointer hover:bg-red-600" onClick={deleteAllPalettes}>Delete All</Button>
+          <Button
+            className="bg-red-500 transition-colors duration-200 cursor-pointer hover:bg-red-600 flex items-center justify-center"
+            onClick={deleteAllPalettes}
+          >
+            <Trash className="w-4 h-4 stroke-white" />
+            Delete All
+          </Button>
         </div>
         <section className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 mt-10 place-items-center">
           {palettes.map((palette, index) => (
@@ -42,9 +48,9 @@ export const SavedPalettes = () => {
                                 className="w-14 h-12 rounded-tl-md cursor-pointer border-1 border-transparent transition-all duration-200 hover:border-slate-300"
                                 style={{ backgroundColor: color }}
                               ></div>
-                            <TooltipContent>
-                              <p className="text-sm">Copy color</p>
-                            </TooltipContent>
+                              <TooltipContent>
+                                <p className="text-sm">Copy color</p>
+                              </TooltipContent>
                             </TooltipTrigger>
                           </Tooltip>
                         </TooltipProvider>
